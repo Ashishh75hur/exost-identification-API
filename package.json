@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Exost_Diagnose_API.js"
+    "start": "nodemon Exost_Identification_API.js"
   },
   "author": "",
   "license": "ISC",
