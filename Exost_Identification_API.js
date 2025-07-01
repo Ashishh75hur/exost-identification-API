@@ -40,9 +40,9 @@ async function sendRequests() {
 
     // wait 15 sec, then hit /start again if isRunning is still true
     console.log(`⏳ Waiting 15 sec before checking for next cycle...`);
-
+    isRunning= false
     setTimeout(async () => {
-        if (isRunning) {
+        if (!isRunning) {
             try {
                 const response = await axios.get(`https://exost-identification-api.onrender.com/start`);
                 console.log(`🔁 Self-called /start - status: ${response.status}`);
