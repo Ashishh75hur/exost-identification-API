@@ -44,7 +44,7 @@ async function sendRequests() {
     setTimeout(async () => {
         if (isRunning) {
             try {
-                const response = await axios.get(`http://localhost:${PORT}/start`);
+                const response = await axios.get(`https://exost-identification-api.onrender.com/start`);
                 console.log(`🔁 Self-called /start - status: ${response.status}`);
             } catch (err) {
                 console.error(`❌ Error self-calling /start:`, err.message);
