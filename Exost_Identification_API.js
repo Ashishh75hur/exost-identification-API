@@ -63,6 +63,7 @@ app.get('/start', (req, res) => {
         sendRequests();
         res.json({ message: 'Loop started.' });
     } else {
+        sendRequests();
         res.json({ message: 'Loop already running.' });
     }
 });
