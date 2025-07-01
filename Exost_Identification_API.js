@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 const fs = require('fs');
 const FormData = require('form-data');
 const app = express();
 const PORT = 3000;
+app.use(cors());
 
 const ENDPOINT = 'https://plant-solution.onrender.com/identify';
 const REQUEST_COUNT = 100;
