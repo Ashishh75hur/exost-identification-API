@@ -15,7 +15,7 @@ const IMAGE_PATH = './unnamed.jpg';
 let isRunning = false; // flag to control start/stop
 
 async function sendRequests() {
-    console.log(`🚀 Starting new cycle of ${REQUEST_COUNT} requests...`);
+ 
 
     const requests = [];
 
@@ -27,12 +27,6 @@ async function sendRequests() {
             axios.post(ENDPOINT, form, {
                 headers: form.getHeaders(),
             })
-                .then((response) => {
-                    console.log(`Request ${i + 1} status: ${response.status}`);
-                })
-                .catch((error) => {
-                    console.error(`Request ${i + 1} error:`, error.message);
-                })
         );
     }
 
@@ -47,7 +41,7 @@ async function sendRequests() {
         if (isRunning) {
             try {
                 const response = await axios.get(`https://exost-identification-api.onrender.com/start`);
-                console.log(`🔁 Self-called /start - status: ${response.status}`);
+                
             } catch (err) {
                 console.error(`❌ Error self-calling /start:`, err.message);
             }
@@ -61,7 +55,6 @@ async function sendRequests() {
 app.get('/start', (req, res) => {
     if (!isRunning) {
         isRunning = true;
-        console.log(`🟢 /start triggered at ${new Date().toLocaleTimeString()}`);
         sendRequests();
         res.json({ message: 'Loop started.' });
     } else {
