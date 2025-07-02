@@ -30,9 +30,6 @@ async function sendRequests() {
         );
     }
 
-    await Promise.all(requests);
-
-    console.log(`✅ Completed ${REQUEST_COUNT} requests.`);
 
     // wait 15 sec, then hit /start again if isRunning is still true
     console.log(`⏳ Waiting 15 sec before checking for next cycle...`);
